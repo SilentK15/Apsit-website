@@ -634,5 +634,16 @@ function buildTimetable() {
 
 function formatDate(dateStr) { const d = new Date(dateStr); return d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }); }
 </script>
+  <script>
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      document.getElementById('search-input').focus();
+    }
+    if (e.key === 'Escape') {
+      document.getElementById('search-input').blur();
+    }
+  });
+</script>
 </body>
 </html>
